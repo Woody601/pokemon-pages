@@ -1,0 +1,19 @@
+.mainContent {
+  text-align: center;
+}
+
+.mainContent h1 {
+  font-size: 60px;
+  margin: 40px 0;
+}
+
+.mainContent section {
+  display: grid;
+  column-gap: 20px;
+  justify-items: center;
+}
+
+.mainContent input {
+  height: 40px;
+  padding: 0 15px;
+}
