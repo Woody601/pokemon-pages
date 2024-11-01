@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import pokemonStyles from "./pokemon.module.css";
 import usePokemonApi from "@/hooks/usePokemonApi";
 
@@ -23,19 +24,15 @@ export default function PokemonCard({
 
   return (
     <div className={pokemonStyles.pokeCard}>
-      <img src={img} />
+      <Link href={`/pokemon/${pokemon.id}`}>
+        <img src={img} alt={name} />
+      </Link>
       <div className={pokemonStyles.mainInfo}>
         <h4>{name}</h4>
         <p>
           <i>Types: {typesJsx}</i>
         </p>
         <div className={pokemonStyles.cardButtons}>
-          <a
-            href={`/pokemon/${pokemon.id}`}
-            className={pokemonStyles.viewButton}
-          >
-            View Pokemon
-          </a>
           <div
             onClick={handleToggleFavorite}
             className={pokemonStyles.favoriteButton}
