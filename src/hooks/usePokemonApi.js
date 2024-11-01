@@ -10,6 +10,18 @@ export function PokemonProvider({ children }) {
     searchedPokemon: [],
     allPokemons: [], // State to hold all Pokémon data
   });
+  const [favorites, setFavorites] = useState([]);
+  async function toggleFavorite(pokemon) {
+    setFavorites((prevFavorites) => {
+      if (prevFavorites.some((fav) => fav.id === pokemon.id)) {
+        // If the Pokémon is already in favorites, remove it
+        return prevFavorites.filter((fav) => fav.id !== pokemon.id);
+      } else {
+        // Otherwise, add it to favorites
+        return [...prevFavorites, pokemon];
+      }
+    });
+  }
 
   async function getNumberOfPokemon() {
     const pokeResponse = await fetch(
@@ -85,6 +97,8 @@ export function PokemonProvider({ children }) {
       id: pokeData.id,
       img: pokeData.sprites.front_default,
       types: pokeData.types,
+      favorites,
+      toggleFavorite,
     };
   }
 
@@ -95,6 +109,8 @@ export function PokemonProvider({ children }) {
     getRandomPokemon,
     searchPokemon,
     getPokemonQuickInfo,
+    favorites,
+    toggleFavorite,
   };
 
   return (

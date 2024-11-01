@@ -24,6 +24,7 @@ export default function Home() {
         name={quickInfo.name}
         img={quickInfo.img}
         types={quickInfo.types}
+        pokemon={pokemon} // Pass the full pokemon object
       />
     );
   });

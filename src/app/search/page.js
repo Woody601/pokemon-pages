@@ -35,6 +35,7 @@ export default function Search() {
         name={quickInfo.name}
         img={quickInfo.img}
         types={quickInfo.types}
+        pokemon={pokemon} // Pass the full pokemon object
       />
     );
   });

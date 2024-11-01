@@ -6,10 +6,31 @@
 .pokeCard img {
   height: 275px;
 }
-.pokeCard div {
+.pokeCard .mainInfo {
   height: 125px;
   background-color: #a8ebff;
 }
-.pokeCard div h4 {
+.pokeCard .mainInfo h4 {
   font-size: 20px;
+}
+.pokeCard .cardButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.pokeCard .cardButtons .favoriteButton {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.pokeCard .cardButtons .favoriteButton i {
+  color: red;
 }
