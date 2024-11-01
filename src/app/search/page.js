@@ -24,7 +24,6 @@ export default function Search() {
     event.preventDefault();
     if (searchTerm) {
       pokeData.searchPokemon(searchTerm);
-      setSearchTerm(""); // Clear the input field after search
     }
   };
 
@@ -54,13 +53,8 @@ export default function Search() {
           <input type="submit" value="Search" />
         </form>
       </section>
-      <section>
-        <h2>Searched Pokémon</h2>
-        {searchedPokemonJsx.length > 0 ? (
-          searchedPokemonJsx
-        ) : (
-          <p>No Pokémon found.</p>
-        )}
+      <section className={searchStyles.pokemonResults}>
+        {searchedPokemonJsx}
       </section>
     </main>
   );

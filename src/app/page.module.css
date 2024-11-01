@@ -1,15 +1,23 @@
 .mainContent {
   text-align: center;
 }
-
 .mainContent h1 {
   font-size: 60px;
   margin: 40px 0;
 }
-
 .mainContent section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  row-gap: 20px;
   justify-items: center;
+  margin: 0 20px 20px;
 }
